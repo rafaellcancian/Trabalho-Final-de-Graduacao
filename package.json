@@ -1,0 +1,33 @@
+{
+  "name": "projeto-tfg",
+  "version": "1.0.0",
+  "description": "O objetivo deste trabalho consistiu em desenvolver uma Application Programming Interface (API) utilizando a arquitetura Representational State Transfer (REST) e os princípios SOLID para proporcionar o acesso a dados públicos para aplicações no Brasil de maneira padronizada e centralizada.",
+  "main": "build/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "npm run clean && tsc",
+    "clean": "rimraf build/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["api", "rest", "centralized", "solid-principles", "standardized"],
+  "author": "Rafael Cancian",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/uuid": "^8.3.4",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "axios": "^1.1.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-light-limiter": "^1.0.1",
+    "joi": "^17.6.3",
+    "knex": "^2.3.0",
+    "pg": "^8.8.0",
+    "uuid": "^9.0.0"
+  }
+}
