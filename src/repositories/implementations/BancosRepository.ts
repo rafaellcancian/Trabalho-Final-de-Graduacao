@@ -28,9 +28,15 @@ export class BancosRepository implements IBancosRepository {
     linhas.shift();
 
     // Separa os elementos contidos nas linhas
-    const elementosSeparados = linhas.map((linha) => 
-      linha.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/) // Separa apenas as vírgulas fora das aspas
-    );
+    const elementosSeparados = linhas.map((linha) => {
+      if (linha.startsWith('"') && linha.endsWith('"')) {
+        linha = linha.substring(1, linha.length - 1); // Retira o primeiro e o último caractere da linha
+        linha = linha.replace(/""/g, '"'); // Substitui "" por "
+        return linha.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/g); // Separa apenas as vírgulas fora das aspas
+      } else {
+        return linha.split(',');
+      }
+    });
 
     // Cria um array com todas as informações da requisição formatadas e validadas
     const arrayBancos = elementosSeparados
