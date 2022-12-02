@@ -1,5 +1,5 @@
 {
-  "name": "desenvolvimento-de-uma-api-rest-utilizando-os-principios-solid",
+  "name": "trabalho-final-de-graduacao",
   "version": "1.0.0",
   "description": "O objetivo deste trabalho consistiu em desenvolver uma Application Programming Interface (API) utilizando a arquitetura Representational State Transfer (REST) e os princípios SOLID para proporcionar o acesso a dados públicos para aplicações no Brasil de maneira padronizada e centralizada.",
   "main": "build/server.js",
@@ -9,7 +9,7 @@
     "clean": "rimraf build/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["api", "rest", "centralized", "solid-principles", "standardized"],
+  "keywords": ["api", "rest", "fallback", "brasil", "centralized", "solid-principles", "standardized", "dados-publicos"],
   "author": "Rafael Cancian",
   "license": "MIT",
   "devDependencies": {
