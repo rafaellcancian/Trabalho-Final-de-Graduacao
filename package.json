@@ -1,6 +1,6 @@
 {
   "name": "trabalho-final-de-graduacao",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "O objetivo deste trabalho consistiu em desenvolver uma Application Programming Interface (API) utilizando a arquitetura Representational State Transfer (REST) e os princípios SOLID para proporcionar o acesso a dados públicos para aplicações no Brasil de maneira padronizada e centralizada.",
   "main": "build/server.js",
   "scripts": {
