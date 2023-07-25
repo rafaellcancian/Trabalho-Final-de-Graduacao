@@ -4,6 +4,14 @@ import { IbgeEstado } from "../../entities/Ibge/IbgeEstado";
 import { IbgeMunicipio } from "../../entities/Ibge/IbgeMunicipio";
 import { Regiao } from '../../entities/Ibge/Regiao';
 import { IIbgeRepository } from "../IIbgeRepository";
+import crypto from 'crypto';
+import https from 'https';
+
+const allowLegacyRenegotiationforNodeJsOptions = {
+  httpsAgent: new https.Agent({
+    secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT,
+  }),
+};
 
 export class IbgeRepository implements IIbgeRepository {
   async getEstadosFromIbge(uf?: string): Promise<IbgeEstado[] | Erro> {
@@ -12,7 +20,10 @@ export class IbgeRepository implements IIbgeRepository {
     });
 
     const result: AxiosResponse | void = await axios
-    .get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/`)
+    .get(
+      `https://servicodados.ibge.gov.br/api/v1/localidades/estados`,
+      allowLegacyRenegotiationforNodeJsOptions
+    )
     .catch(function (error) {
       console.log('Erro do Axios: ' + error.message);
       erro.estado = true;
@@ -63,7 +74,10 @@ export class IbgeRepository implements IIbgeRepository {
     });
 
     const result: AxiosResponse | void = await axios
-    .get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
+    .get(
+      `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`,
+      allowLegacyRenegotiationforNodeJsOptions
+    )
     .catch(function (error) {
       console.log('Erro do Axios: ' + error.message);
       erro.estado = true;
