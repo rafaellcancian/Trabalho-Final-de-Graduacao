@@ -1,5 +1,5 @@
 # Como executar a aplicação localmente
-- Requer Node.js 14 ou superior instalado.
+- Requer Node.js 18 ou superior instalado.
 > Executar os seguintes comandos:
 - `npm i` -> Baixa todos os módulos necessários para a execução da aplicação.
 - `npm run dev` -> Inicia o servidor da aplicação localmente.
