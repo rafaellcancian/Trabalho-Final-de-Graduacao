@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "npm run clean && tsc",
-    "clean": "rimraf build/*",
+    "clean": "rimraf --glob build/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
