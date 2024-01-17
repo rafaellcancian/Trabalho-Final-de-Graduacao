@@ -32,7 +32,7 @@ app.get('/', (request, response) => {
     <html lang="pt-BR">
     <head>
       <meta charset="utf-8">
-      <title>Projeto TFG</title>
+      <title>Desenvolvimento de uma API REST utilizando os princípios SOLID</title>
     </head>
 
     <body>
