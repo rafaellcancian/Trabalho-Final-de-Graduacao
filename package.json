@@ -32,7 +32,7 @@
   "dependencies": {
     "axios": "1.7.4",
     "dotenv": "16.4.5",
-    "express": "4.19.2",
+    "express": "4.20.0",
     "express-light-limiter": "1.0.1",
     "joi": "17.13.3",
     "knex": "3.1.0",
