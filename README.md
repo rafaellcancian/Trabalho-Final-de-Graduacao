@@ -6,7 +6,7 @@
 - Para realizar as consultas na API, utilizar o navegador ou programas como **Postman** e **Insomnia** baseado na documentação abaixo.
 
 > Observações:
-- O provedor **Invertexto** não funcionará sem um token especificado no `.env.production`, pois se trata de uma API privada que requer uma conta.
+- O provedor **Invertexto** não funcionará sem um token especificado no `.env`, pois se trata de uma API privada que requer uma conta.
 - A aplicação executará sem um banco de dados **PostgreSQL** normalmente, porém não fará os registros das requisições. Para configurar o banco de dados localmente, ver o arquivo `.env.example`.
 
 # Documentação da API

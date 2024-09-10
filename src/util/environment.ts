@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 
 dotenv.config({
-  path: '.env.production'
+  path: '.env'
 });
 
 const invertextoApiToken = process.env.INVERTEXTO_API_TOKEN;
