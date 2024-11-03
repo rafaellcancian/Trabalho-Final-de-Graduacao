@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
-import { middlewareParamsValidation } from '../middlewares/validationMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
+import { pathValidation } from '../middlewares/validationData.middleware';
 import { 
   cnpjParamsValidationRequest,
   cnpjController 
@@ -10,8 +10,8 @@ const cnpjRouter = Router();
 
 cnpjRouter.get(
   '/api/cnpj/v1/:cnpj',
-  middlewareParamsValidation(cnpjParamsValidationRequest),
-  middlewareAntiFloodPrevention(),
+  pathValidation(cnpjParamsValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await cnpjController.handle(request, response);

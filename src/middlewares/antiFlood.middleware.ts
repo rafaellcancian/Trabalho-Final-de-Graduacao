@@ -8,8 +8,8 @@ const limiterConfig = {
   error: new ThrowMessageRequest().tooManyRequests() // Mensagem de erro personalizada
 };
 
-const middlewareAntiFloodPrevention = () => {
+const antiFloodPrevention = () => {
   return limiter(limiterConfig);
 };
 
-export { middlewareAntiFloodPrevention };
+export { antiFloodPrevention };

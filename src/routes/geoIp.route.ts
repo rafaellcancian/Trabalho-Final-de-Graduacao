@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
-import { middlewareParamsValidation } from '../middlewares/validationMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
+import { pathValidation } from '../middlewares/validationData.middleware';
 import { 
   geoIpController, 
   geoIpParamsValidationRequest
@@ -10,8 +10,8 @@ const geoIpRouter = Router();
 
 geoIpRouter.get(
   '/api/geoIp/v1/:ip',
-  middlewareParamsValidation(geoIpParamsValidationRequest),
-  middlewareAntiFloodPrevention(),
+  pathValidation(geoIpParamsValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await geoIpController.handle(request, response);

@@ -1,5 +1,5 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const geoIpParamsValidationRequest = joi.object({
-  ip: joi.string().ip().required()
-});
+export const geoIpParamsValidationRequest = {
+  ip: Joi.string().ip().required()
+};

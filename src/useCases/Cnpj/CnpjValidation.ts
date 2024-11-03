@@ -1,5 +1,5 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const cnpjParamsValidationRequest = joi.object({
-  cnpj: joi.string().regex(/^[0-9]+$/).min(14).max(14).required()
-});
+export const cnpjParamsValidationRequest = {
+  cnpj: Joi.string().regex(/^[0-9]+$/).min(14).max(14).required()
+};

@@ -1,11 +1,11 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const feriadosParamsValidationRequest = joi.object({
-  ano: joi.string().regex(/^[0-9]+$/).required()
-});
+export const feriadosParamsValidationRequest = {
+  ano: Joi.string().regex(/^[0-9]+$/).required()
+};
 
-export const feriadosQueryValidationRequest = joi.object({
-  uf: joi.string().valid(
+export const feriadosQueryValidationRequest = {
+  uf: Joi.string().valid(
     'AC',
     'AL',
     'AP',
@@ -34,5 +34,5 @@ export const feriadosQueryValidationRequest = joi.object({
     'SE',
     'TO'
   ),
-  provedor: joi.string().valid('invertexto', 'brasilapi')
-});
+  provedor: Joi.string().valid('invertexto', 'brasilapi')
+};

@@ -1,9 +1,9 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const cepParamsValidationRequest = joi.object({
-  cep: joi.string().regex(/^[0-9]+$/).min(8).max(8).required()
-});
+export const cepParamsValidationRequest = {
+  cep: Joi.string().regex(/^[0-9]+$/).min(8).max(8).required()
+};
 
-export const cepQueryValidationRequest = joi.object({
-  provedor: joi.string().valid('viacep', 'widenet', 'invertexto')
-});
+export const cepQueryValidationRequest = {
+  provedor: Joi.string().valid('viacep', 'widenet', 'invertexto')
+};

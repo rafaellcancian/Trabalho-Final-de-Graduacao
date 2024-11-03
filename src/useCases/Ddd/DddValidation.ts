@@ -1,5 +1,5 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const dddParamsValidationRequest = joi.object({
-  prefixo: joi.string().regex(/^[0-9]+$/).min(2).max(2).required()
-});
+export const dddParamsValidationRequest = {
+  prefixo: Joi.string().regex(/^[0-9]+$/).min(2).max(2).required()
+};

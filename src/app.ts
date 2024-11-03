@@ -1,11 +1,10 @@
-import { Request, Response } from 'express';
 import { routers } from './routes/index';
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 
 const app = express();
 
 /** Cabeçalhos (configuração do CORS) */
-app.use(function (request, response, next) {
+app.use((request: Request, response: Response, next: NextFunction) => {
   // Origens que serão permitidas a conexão
   response.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -23,7 +22,7 @@ app.use(function (request, response, next) {
 });
 
 /** Página raiz */
-app.get('/', (request, response) => {
+app.get('/', (request: Request, response: Response) => {
   const ip = request.socket.remoteAddress;
   const status = response.statusCode;
 
@@ -48,12 +47,12 @@ app.get('/', (request, response) => {
 app.use(routers);
 
 /** URL não foi encontrado */
-app.all('*', (request, response) => {
+app.all('*', (request: Request, response: Response) => {
   response.status(404).send({ mensagem: 'O URL solicitado não foi encontrado neste servidor.' });
 });
 
 /** Tratamento de erros */
-app.use(function (error, request: Request, response: Response, next) {
+app.use((error: any, request: Request, response: Response, next: NextFunction) => {
   console.error(error);
 
   const message = error.message || '';

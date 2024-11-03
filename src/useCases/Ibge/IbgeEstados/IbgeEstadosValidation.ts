@@ -1,7 +1,7 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const ibgeEstadosQueryValidationRequest = joi.object({
-  uf: joi.string().valid(
+export const ibgeEstadosQueryValidationRequest = {
+  uf: Joi.string().valid(
     'AC',
     'AL',
     'AP',
@@ -30,4 +30,4 @@ export const ibgeEstadosQueryValidationRequest = joi.object({
     'SE',
     'TO'
   )
-});
+};

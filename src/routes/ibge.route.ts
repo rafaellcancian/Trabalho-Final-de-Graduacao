@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
 import { 
-  middlewareParamsValidation, 
-  middlewareQueryValidation 
-} from '../middlewares/validationMiddleware';
+  pathValidation, 
+  queryValidation 
+} from '../middlewares/validationData.middleware';
 import { 
   ibgeEstadosQueryValidationRequest, 
   ibgeEstadosController 
@@ -18,8 +18,8 @@ const ibgeRouter = Router();
 // Ibge - Estados
 ibgeRouter.get(
   '/api/ibge/estados/v1',
-  middlewareQueryValidation(ibgeEstadosQueryValidationRequest),
-  middlewareAntiFloodPrevention(),
+  queryValidation(ibgeEstadosQueryValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await ibgeEstadosController.handle(request, response);
@@ -32,8 +32,8 @@ ibgeRouter.get(
 // Ibge - Municípios
 ibgeRouter.get(
   '/api/ibge/municipios/v1/:uf',
-  middlewareParamsValidation(ibgeMunicipiosParamsValidationRequest),
-  middlewareAntiFloodPrevention(),
+  pathValidation(ibgeMunicipiosParamsValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await ibgeMunicipiosController.handle(request, response);

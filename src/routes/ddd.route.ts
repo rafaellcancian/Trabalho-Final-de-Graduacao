@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
-import { middlewareParamsValidation } from '../middlewares/validationMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
+import { pathValidation } from '../middlewares/validationData.middleware';
 import { 
   dddController, 
   dddParamsValidationRequest
@@ -10,8 +10,8 @@ const dddRouter = Router();
 
 dddRouter.get(
   '/api/ddd/v1/:prefixo',
-  middlewareParamsValidation(dddParamsValidationRequest),
-  middlewareAntiFloodPrevention(),
+  pathValidation(dddParamsValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await dddController.handle(request, response);

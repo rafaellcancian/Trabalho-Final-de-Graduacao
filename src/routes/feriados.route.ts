@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
 import { 
-  middlewareParamsValidation, 
-  middlewareQueryValidation 
-} from '../middlewares/validationMiddleware';
+  pathValidation, 
+  queryValidation 
+} from '../middlewares/validationData.middleware';
 import { 
   feriadosController, 
   feriadosParamsValidationRequest, 
@@ -14,9 +14,9 @@ const feriadosRouter = Router();
 
 feriadosRouter.get(
   '/api/feriados/v1/:ano',
-  middlewareParamsValidation(feriadosParamsValidationRequest),
-  middlewareQueryValidation(feriadosQueryValidationRequest),
-  middlewareAntiFloodPrevention(),
+  pathValidation(feriadosParamsValidationRequest),
+  queryValidation(feriadosQueryValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await feriadosController.handle(request, response);

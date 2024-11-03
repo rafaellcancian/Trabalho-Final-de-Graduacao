@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
-import { middlewareQueryValidation } from '../middlewares/validationMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
+import { queryValidation } from '../middlewares/validationData.middleware';
 import { 
   bancosController, 
   bancosQueryValidationRequest
@@ -10,8 +10,8 @@ const bancosRouter = Router();
 
 bancosRouter.get(
   '/api/bancos/v1',
-  middlewareQueryValidation(bancosQueryValidationRequest),
-  middlewareAntiFloodPrevention(),
+  queryValidation(bancosQueryValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await bancosController.handle(request, response);

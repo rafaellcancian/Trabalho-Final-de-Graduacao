@@ -1,5 +1,5 @@
-import * as joi from 'joi';
+import Joi from 'joi';
 
-export const bancosQueryValidationRequest = joi.object({
-  codigo: joi.number().integer().min(1).max(999)
-});
+export const bancosQueryValidationRequest = {
+  codigo: Joi.number().integer().min(1).max(999)
+};

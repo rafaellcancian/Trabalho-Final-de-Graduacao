@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { middlewareAntiFloodPrevention } from '../middlewares/antiFloodMiddleware';
+import { antiFloodPrevention } from '../middlewares/antiFlood.middleware';
 import { 
-  middlewareParamsValidation, 
-  middlewareQueryValidation 
-} from '../middlewares/validationMiddleware';
+  pathValidation, 
+  queryValidation 
+} from '../middlewares/validationData.middleware';
 import { 
   cepController, 
   cepParamsValidationRequest, 
@@ -14,9 +14,9 @@ const cepRouter = Router();
 
 cepRouter.get(
   '/api/cep/v1/:cep',
-  middlewareParamsValidation(cepParamsValidationRequest),
-  middlewareQueryValidation(cepQueryValidationRequest),
-  middlewareAntiFloodPrevention(),
+  pathValidation(cepParamsValidationRequest),
+  queryValidation(cepQueryValidationRequest),
+  antiFloodPrevention(),
   async (request, response, next) => {
     try {
       await cepController.handle(request, response);
