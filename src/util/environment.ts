@@ -4,19 +4,23 @@ dotenv.config({
   path: '.env'
 });
 
+// DBConfig
+const pgHost = process.env.PG_HOST || 'localhost';
+const pgPort = parseInt(process.env.PG_PORT || '5432');
+const pgUser = process.env.PG_USER || 'postgres';
+const pgPassword = process.env.PG_PASSWORD || 'password';
+const pgDatabase = process.env.PG_DATABASE || 'postgres';
+
+// Invertexto API
 const invertextoApiToken = process.env.INVERTEXTO_API_TOKEN;
 
-const pgHost = process.env.POSTGRES_HOST;
-const pgUser = process.env.POSTGRES_USER;
-const pgPassword = process.env.POSTGRES_PASSWORD;
-const pgDatabase = process.env.POSTGRES_DATABASE;
-
 console.log({
-  invertextoApiToken,
   pgHost,
+  pgPort,
   pgUser,
   pgPassword,
-  pgDatabase
+  pgDatabase,
+  invertextoApiToken
 });
 
 if (!invertextoApiToken) {
@@ -30,9 +34,10 @@ if (!pgHost || !pgUser || !pgPassword || !pgDatabase) {
 }
 
 export {
-  invertextoApiToken,
   pgHost,
+  pgPort,
   pgUser,
   pgPassword,
-  pgDatabase
+  pgDatabase,
+  invertextoApiToken
 };

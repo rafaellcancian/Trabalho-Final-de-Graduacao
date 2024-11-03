@@ -1,18 +1,20 @@
 import knex from 'knex';
-import { 
-  pgDatabase, 
-  pgHost, 
-  pgPassword, 
-  pgUser 
+import {
+  pgHost,
+  pgPort,
+  pgUser,
+  pgPassword,
+  pgDatabase
 } from './environment';
 
 const knexPg = knex({
   client: 'postgres',
   connection: {
-    host : pgHost,
-    user : pgUser,
-    password : pgPassword,
-    database : pgDatabase
+    host: pgHost,
+    port: pgPort,
+    user: pgUser,
+    password: pgPassword,
+    database: pgDatabase
   },
   useNullAsDefault: true
 });
