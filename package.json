@@ -4,7 +4,7 @@
   "description": "O objetivo deste trabalho consistiu em desenvolver uma Application Programming Interface (API) utilizando a arquitetura Representational State Transfer (REST) e os princípios SOLID para proporcionar o acesso a dados públicos para aplicações no Brasil de maneira padronizada e centralizada.",
   "main": "build/server.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "start": "nodemon src/server.ts",
     "build": "npm run clean && tsc",
     "clean": "rimraf --glob build/*",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,21 +22,21 @@
   "author": "Rafael Cancian",
   "license": "MIT",
   "devDependencies": {
-    "@types/express": "4.17.21",
+    "@types/express": "5.0.0",
     "@types/uuid": "10.0.0",
-    "nodemon": "3.1.4",
+    "nodemon": "3.1.7",
     "rimraf": "6.0.1",
     "ts-node": "10.9.2",
-    "typescript": "5.5.4"
+    "typescript": "5.6.3"
   },
   "dependencies": {
-    "axios": "1.7.4",
+    "axios": "1.7.7",
     "dotenv": "16.4.5",
-    "express": "4.20.0",
+    "express": "4.21.1",
     "express-light-limiter": "1.0.1",
     "joi": "17.13.3",
     "knex": "3.1.0",
-    "pg": "8.12.0",
-    "uuid": "10.0.0"
+    "pg": "8.13.1",
+    "uuid": "11.0.2"
   }
 }
