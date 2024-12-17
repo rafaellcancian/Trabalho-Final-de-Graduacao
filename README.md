@@ -23,7 +23,7 @@ Padronizar a forma como se acessa a API ajuda as aplicações a terem uma maior 
 Informações sobre o sistema bancário brasileiro.
 
 ### 1. Lista as informações de todos os bancos do Brasil utilizando dados do Banco Central
-`GET` http://canciantfg.ddns.net:3000/api/bancos/v1
+`GET` http://cancianhosting.ddns.net:3000/api/bancos/v1
 
 ### Respostas
 **Sucesso (200)**
@@ -53,7 +53,7 @@ Informações sobre o sistema bancário brasileiro.
 ***
 
 ### 2. Filtra as informações da lista a partir de um código
-`GET` http://canciantfg.ddns.net:3000/api/bancos/v1?codigo=
+`GET` http://cancianhosting.ddns.net:3000/api/bancos/v1?codigo=
 - Parâmetro Query: `codigo` inteiro de `1` à `999`. **(Opcional)**
 
 ### Respostas
@@ -89,7 +89,7 @@ Informações sobre o sistema bancário brasileiro.
 Informações sobre Código de Endereçamento Postal.
 
 ### 1. Busca por Cep utilizando o sistema *fallback* com múltiplos provedores
-`GET` http://canciantfg.ddns.net:3000/api/cep/v1/:cep
+`GET` http://cancianhosting.ddns.net:3000/api/cep/v1/:cep
 - Parâmetro Path: `cep` *string* de tamanho `8` com a expressão regular `/^[0-9]+$/`.
 
 ### Respostas
@@ -139,7 +139,7 @@ Informações sobre Código de Endereçamento Postal.
 ***
 
 ### 2. Busca por Cep especificando o provedor
-`GET` http://canciantfg.ddns.net:3000/api/cep/v1/:cep?provedor=
+`GET` http://cancianhosting.ddns.net:3000/api/cep/v1/:cep?provedor=
 - Parâmetro Path: `cep` *string* de tamanho `8` com a expressão regular `/^[0-9]+$/`.
 - Parâmetro Query: `provedor` *string* válida somente com as opções `viacep`, `widenet` e `invertexto`. **(Opcional)**
 
@@ -173,7 +173,7 @@ Informações sobre Código de Endereçamento Postal.
 Informações sobre Cadastro Nacional da Pessoa Jurídica.
 
 ### 1. Busca por Cnpj utilizando o provedor Minha Receita
-`GET` http://canciantfg.ddns.net:3000/api/cnpj/v1/:cnpj
+`GET` http://cancianhosting.ddns.net:3000/api/cnpj/v1/:cnpj
 - Parâmetro Path: `cnpj` *string* de tamanho `14` com a expressão regular `/^[0-9]+$/`.
 
 ### Respostas
@@ -254,7 +254,7 @@ Informações sobre Cadastro Nacional da Pessoa Jurídica.
 Informações sobre Discagem Direta à Distância.
 
 ### 1. Lista todas as cidades do respectivo prefixo utilizando o provedor Anatel
-`GET` http://canciantfg.ddns.net:3000/api/ddd/v1/:prefixo
+`GET` http://cancianhosting.ddns.net:3000/api/ddd/v1/:prefixo
 - Parâmetro Path: `prefixo` *string* de tamanho `2` com a expressão regular `/^[0-9]+$/`.
 
 ### Respostas
@@ -296,7 +296,7 @@ Informações sobre Discagem Direta à Distância.
 Informações sobre Feriados Nacionais e Estaduais (somente com o provedor Invertexto).
 
 ### 1. Lista as informações de todos os Feriados Nacionais do respectivo ano utilizando o sistema *fallback* com múltiplos provedores
-`GET` http://canciantfg.ddns.net:3000/api/feriados/v1/:ano
+`GET` http://cancianhosting.ddns.net:3000/api/feriados/v1/:ano
 - Parâmetro Path: `ano` *string* com a expressão regular `/^[0-9]+$/`.
 
 ### Respostas
@@ -348,7 +348,7 @@ Informações sobre Feriados Nacionais e Estaduais (somente com o provedor Inver
 ***
 
 ### 2. Lista as informações de todos os Feriados Nacionais do respectivo ano especificando o estado e o provedor
-`GET` http://canciantfg.ddns.net:3000/api/feriados/v1/:ano?uf=&provedor=
+`GET` http://cancianhosting.ddns.net:3000/api/feriados/v1/:ano?uf=&provedor=
 - Parâmetro Path: `ano` *string* com a expressão regular `/^[0-9]+$/`.
 - Parâmetro Query: `provedor` *string* válida somente com as opções `invertexto` e `brasilapi`. **(Opcional)**
 > Somente com o provedor Invertexto:
@@ -393,7 +393,7 @@ Informações sobre Feriados Nacionais e Estaduais (somente com o provedor Inver
 Informações sobre Geolocalização por IP.
 
 ### 1. Busca por IP utilizando o provedor Invertexto
-`GET` http://canciantfg.ddns.net:3000/api/geoIp/v1/:ip
+`GET` http://cancianhosting.ddns.net:3000/api/geoIp/v1/:ip
 - Parâmetro Path: `ip` *string* válida somente com o formato `IPv4` ou `IPv6`.
 
 ### Respostas
@@ -430,7 +430,7 @@ Informações sobre Geolocalização por IP.
 Informações sobre o Instituto Brasileiro de Geografia e Estatística referente aos estados.
 
 ### 1. Lista as informações de todos os estados do Brasil utilizando dados do Ibge
-`GET` http://canciantfg.ddns.net:3000/api/ibge/estados/v1
+`GET` http://cancianhosting.ddns.net:3000/api/ibge/estados/v1
 
 ### Respostas
 **Sucesso (200)**
@@ -464,7 +464,7 @@ Informações sobre o Instituto Brasileiro de Geografia e Estatística referente
 ```
 
 ### 2. Filtra as informações da lista a partir de um estado
-`GET` http://canciantfg.ddns.net:3000/api/ibge/estados/v1?uf=
+`GET` http://cancianhosting.ddns.net:3000/api/ibge/estados/v1?uf=
 - Parâmetro Query: `uf` *string* válida somente com uma Unidade Federativa (em maiúsculo). **(Opcional)**
 
 ### Respostas
@@ -490,7 +490,7 @@ Informações sobre o Instituto Brasileiro de Geografia e Estatística referente
 Informações sobre o Instituto Brasileiro de Geografia e Estatística referente aos municípios de cada estado.
 
 ### 1. Lista as informações de todos os municípios do respectivo estado utilizando dados do Ibge
-`GET` http://canciantfg.ddns.net:3000/api/ibge/municipios/v1/:uf
+`GET` http://cancianhosting.ddns.net:3000/api/ibge/municipios/v1/:uf
 - Parâmetro Path: `uf` *string* válida somente com uma Unidade Federativa (em maiúsculo).
 
 ### Respostas
