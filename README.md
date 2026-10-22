@@ -1,8 +1,8 @@
 # Como executar a aplicação localmente
-- Requer Node.js 18 ou superior instalado.
+- Requer Node.js 18 ou superior e Yarn instalados.
 > Executar os seguintes comandos:
-- `npm i` -> Baixa todos os módulos necessários para a execução da aplicação.
-- `npm run dev` -> Inicia o servidor da aplicação localmente.
+- `yarn` -> Baixa todos os módulos necessários para a execução da aplicação.
+- `yarn start` -> Inicia o servidor da aplicação localmente.
 - Para realizar as consultas na API, utilizar o navegador ou programas como **Postman** e **Insomnia** baseado na documentação abaixo.
 
 > Observações:

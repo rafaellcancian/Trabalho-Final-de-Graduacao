@@ -5,7 +5,7 @@
   "main": "build/server.js",
   "scripts": {
     "start": "node --watch -r ts-node/register src/server.ts",
-    "build": "npm run clean && tsc",
+    "build": "yarn clean && tsc",
     "clean": "rimraf --glob build/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
