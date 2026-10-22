@@ -1,5 +1,5 @@
 # Como executar a aplicação localmente
-- Requer Node.js 18 ou superior e Yarn instalados.
+- Requer Node.js 22 ou superior e Yarn instalados.
 > Executar os seguintes comandos:
 - `yarn` -> Baixa todos os módulos necessários para a execução da aplicação.
 - `yarn start` -> Inicia o servidor da aplicação localmente.

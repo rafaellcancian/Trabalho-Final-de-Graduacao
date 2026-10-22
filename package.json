@@ -21,6 +21,9 @@
   ],
   "author": "Rafael Cancian",
   "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "@types/express": "4.17.25",
     "@types/uuid": "10.0.0",
