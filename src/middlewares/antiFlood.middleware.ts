@@ -1,15 +1,16 @@
-import limiter from 'express-light-limiter';
+import { rateLimit } from 'express-rate-limit';
 import { ThrowMessageRequest } from '../util/ThrowMessageRequest';
 
 const limiterConfig = {
-  quantum: 10 * 1000, // Um quantum tem 10 segundos
-  maxRequestsPerQuantum: 5, // São permitidas 5 requisições por quantum
-  lookup: 'connection.remoteAddress', // Limitado pelo endereço IP do usuário
-  error: new ThrowMessageRequest().tooManyRequests() // Mensagem de erro personalizada
+  windowMs: 10 * 1000, // Um quantum tem 10 segundos
+  limit: 5, // São permitidas 5 requisições por quantum
+  standardHeaders: false, // Não envia os cabeçalhos RateLimit-*
+  legacyHeaders: false, // Não envia os cabeçalhos X-RateLimit-*
+  handler: (request, response, next) => next(new ThrowMessageRequest().tooManyRequests()) // Mensagem de erro personalizada
 };
 
 const antiFloodPrevention = () => {
-  return limiter(limiterConfig);
+  return rateLimit(limiterConfig);
 };
 
 export { antiFloodPrevention };
