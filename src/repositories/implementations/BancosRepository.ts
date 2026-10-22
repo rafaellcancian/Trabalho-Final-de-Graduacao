@@ -10,7 +10,7 @@ export class BancosRepository implements IBancosRepository {
     });
 
     const result: AxiosResponse | void = await axios
-    .get(`https://www.bcb.gov.br/pom/spb/estatistica/port/ParticipantesSTRport.csv`)
+    .get(`https://www.bcb.gov.br/content/estabilidadefinanceira/str1/ParticipantesSTR.csv`)
     .catch(function (error) {
       console.log('Erro do Axios: ' + error.message);
       erro.estado = true;
@@ -21,7 +21,7 @@ export class BancosRepository implements IBancosRepository {
     if (!result || erro.estado == true) return erro;
 
     // Converte para String e separa em linhas
-    const quebraDeLinha = '\r\n';
+    const quebraDeLinha = /\r?\n/; // Aceita quebras de linha CRLF e LF
     const linhas = result.data.split(quebraDeLinha);
     
     // Remove o primeiro elemento do Array
